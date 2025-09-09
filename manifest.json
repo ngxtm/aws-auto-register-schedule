@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "AutoFill VN Forms",
+  "version": "1.0.0",
+  "description": "Tự động điền nhanh các form tiếng Việt (Họ và tên, SĐT, Email, ...).",
+  "icons": { "128": "icons/icon128.png" },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "action": { "default_popup": "popup.html" },
+  "options_page": "options.html",
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "fill-now": {
+      "suggested_key": { "default": "Ctrl+Shift+F" },
+      "description": "Điền form ngay bằng profile hiện tại"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AutoFill Profiles</title>
+  <style>body{font:14px/1.4 system-ui;margin:20px;max-width:720px}</style>
+</head>
+<body>
+  <h2>Hồ sơ điền tự động</h2>
+  <label>Chọn profile đang dùng:
+    <select id="sel"></select>
+  </label>
+  <button id="newBtn">+ Profile mới</button>
+  <label><input type="checkbox" id="autoFillOnLoad"> Tự điền khi mở trang</label>
+
+  <hr>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <input id="fullName" placeholder="Họ và tên">
+    <input id="phone" placeholder="Số điện thoại">
+    <input id="email" placeholder="Email">
+    <select id="university" style="grid-column:1/-1">
+      <option value="">Chọn trường đại học...</option>
+      <option value="Cao đẳng FPT Polytechnic">Cao đẳng FPT Polytechnic</option>
+      <option value="Đại học Bách khoa TP.HCM – HCMUT">Đại học Bách khoa TP.HCM – HCMUT</option>
+      <option value="Đại học Khoa học Tự nhiên – HCMUS">Đại học Khoa học Tự nhiên – HCMUS</option>
+      <option value="Đại học Công nghệ Thông tin – UIT">Đại học Công nghệ Thông tin – UIT</option>
+      <option value="Đại học Quốc tế – HCMIU">Đại học Quốc tế – HCMIU</option>
+      <option value="Đại học Sư phạm Kỹ thuật TP.HCM – HCMUTE">Đại học Sư phạm Kỹ thuật TP.HCM – HCMUTE</option>
+      <option value="Đại học Công nghệ TP.HCM – HUTECH">Đại học Công nghệ TP.HCM – HUTECH</option>
+      <option value="Đại học Giao thông Vận tải TP.HCM – UTH">Đại học Giao thông Vận tải TP.HCM – UTH</option>
+      <option value="Đại học RMIT Việt Nam">Đại học RMIT Việt Nam</option>
+      <option value="Đại học Văn Lang – VLU">Đại học Văn Lang – VLU</option>
+      <option value="Đại học Công nghệ Sài Gòn – STU">Đại học Công nghệ Sài Gòn – STU</option>
+      <option value="Đại học Sài Gòn – SGU">Đại học Sài Gòn – SGU</option>
+      <option value="Đại học FPT TP.HCM – FPTU">Đại học FPT TP.HCM – FPTU</option>
+      <option value="Đại học Swinburne Việt Nam">Đại học Swinburne Việt Nam</option>
+      <option value="Đại học Công nghiệp TP.HCM – IUH">Đại học Công nghiệp TP.HCM – IUH</option>
+      <option value="Đại học Ngân hàng TP.HCM – HUB">Đại học Ngân hàng TP.HCM – HUB</option>
+      <option value="Đại học Công nghệ Đồng Nai – DNTU">Đại học Công nghệ Đồng Nai – DNTU</option>
+      <option value="Đại học Hoa Sen – HSU">Đại học Hoa Sen – HSU</option>
+      <option value="Đại học Tôn Đức Thắng – TDTU">Đại học Tôn Đức Thắng – TDTU</option>
+      <option value="Học viện Hàng không Việt Nam – VAA">Học viện Hàng không Việt Nam – VAA</option>
+      <option value="Học viện Công nghệ Bưu chính Viễn thông – PTIT">Học viện Công nghệ Bưu chính Viễn thông – PTIT</option>
+      <option value="Đại học Greenwich Việt Nam">Đại học Greenwich Việt Nam</option>
+    </select>
+    <input id="studentId" placeholder="Mã số sinh viên">
+    <select id="floor">
+      <option value="">Chọn tầng...</option>
+      <option value="26">Tầng 26</option>
+      <option value="46">Tầng 46</option>
+    </select>
+    <select id="purpose" style="grid-column:1/-1">
+      <option value="">Chọn mục đích...</option>
+      <option value="Học tập">Học tập</option>
+      <option value="Tham dự events">Tham dự events</option>
+    </select>
+    <select id="fcjShirt" style="grid-column:1/-1">
+      <option value="">Đã có áo FCJ hay chưa?...</option>
+      <option value="Đã có áo FCJ">Đã có áo FCJ</option>
+      <option value="Chưa có áo FCJ">Chưa có áo FCJ</option>
+    </select>
+  </div>
+  <p><button id="saveBtn">Lưu</button> <button id="delBtn">Xoá profile</button></p>
+
+  <script src="options.js"></script>
+</body>
+</html>
