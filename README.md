@@ -10,3 +10,12 @@ Follow these steps to install:
 6. Fill in the profile data.
 7. Save.
 8. Refresh the page or press the shortcut (Ctrl+Shift+F) to auto-fill the form.
+
+## Demo Image
+![pic-register](images/register.png)
+
+
+![pic-profile](images/profile.png)
+
+
+![pic-popup](images/popup.png)
