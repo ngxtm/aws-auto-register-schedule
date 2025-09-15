@@ -216,6 +216,19 @@ async function selectMuiByLabel(labelText, optionText){
 
   let combo = null;
   for (const lb of candidateLabels){
+    
+    const forId = lb.getAttribute('for');
+    if (forId){
+      const byFor = document.getElementById(forId);
+      if (byFor && (
+        byFor.getAttribute('role') === 'combobox' ||
+        /MuiAutocomplete-input/.test(byFor.className) ||
+        byFor.tagName?.toLowerCase() === 'input'
+      )){
+        combo = byFor; label = lb; 
+      }
+    }
+    if (combo) break;
     const comboSelectors = [
       `[role="combobox"][aria-labelledby*="${lb.id}"]`,
       `[role="combobox"][aria-labelledby="${lb.id}"]`,
@@ -240,8 +253,18 @@ async function selectMuiByLabel(labelText, optionText){
   combo.click();
   combo.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
   combo.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+  combo.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }));
   combo.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
-  await delay(180);
+  
+  if (combo.tagName?.toLowerCase() === 'input'){
+    const current = combo.value || '';
+    if (norm(current) !== norm(optionText)){
+      combo.value = optionText;
+      combo.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  }
+  
+  await delay(200);
 
   const comboMenuId = combo.getAttribute('aria-controls') || combo.getAttribute('aria-owns');
   const listbox = await waitFor(() => {
